@@ -54,6 +54,16 @@ class LinkedList
         current 
     end
 
+    def at(index)
+        current_index = 1
+        current = @head
+        while current_index < index && current.next_node
+            current = current.next_node
+            current_index += 1
+        end
+        current_index == index ? current :nil
+    end
+
     def display
       current = @head
       while current
@@ -65,13 +75,14 @@ class LinkedList
 end
   
   linked_list = LinkedList.new
-  linked_list.append(2)
-  linked_list.append(3)
   linked_list.append(4)
-  linked_list.prepend(1)
-  linked_list.prepend(0)
+  linked_list.append(5)
+  linked_list.append(6)
+  linked_list.prepend(3)
+  linked_list.prepend(2)
   
   puts "size of the linked list: #{linked_list.size}"
   puts "Head of the linked list: #{linked_list.head.data}"
   puts "Tail of the linked_list: #{linked_list.tail.data}"
+  puts "Node of the linked_list: #{linked_list.at(3).data}"
   linked_list.display
