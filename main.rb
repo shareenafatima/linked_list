@@ -46,6 +46,14 @@ class LinkedList
         @head
     end
 
+    def tail
+        current = @head
+        while current.next_node
+            current = current.next_node
+        end
+        current 
+    end
+
     def display
       current = @head
       while current
@@ -65,4 +73,5 @@ end
   
   puts "size of the linked list: #{linked_list.size}"
   puts "Head of the linked list: #{linked_list.head.data}"
+  puts "Tail of the linked_list: #{linked_list.tail.data}"
   linked_list.display
