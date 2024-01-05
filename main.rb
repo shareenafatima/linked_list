@@ -81,6 +81,17 @@ class LinkedList
         false
     end
 
+    def find(value)
+        current = @head
+        index = 1
+      while current
+            return index if current.data == value
+            current = current.next_node
+           index += 1
+      end
+        nil
+   end
+
     def display
       current = @head
       while current
@@ -89,8 +100,7 @@ class LinkedList
       end
       puts "nil"
     end
-end
-  
+end 
   linked_list = LinkedList.new
   linked_list.append(4)
   linked_list.append(5)
@@ -104,5 +114,6 @@ end
   puts "Tail of the linked_list: #{linked_list.tail.data}"
   puts "Node of the linked_list: #{linked_list.at(3).data}"
   puts "contains 1? #{linked_list.contains?(1)}"
+  puts "Index of value 3: #{linked_list.find(3)}"
   
   
