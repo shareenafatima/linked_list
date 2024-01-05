@@ -5,9 +5,9 @@ class Node
       @data = data
       @next_node = next_node
     end
-  end
+end
   
-  class LinkedList
+class LinkedList
     attr_accessor :head
   
     def initialize
@@ -26,6 +26,12 @@ class Node
       end
     end
   
+    def prepend(data)
+        new_node = Node.new(data)
+        new_node.next_node = @head
+        @head = new_node
+    end
+  
     def display
       current = @head
       while current
@@ -34,11 +40,12 @@ class Node
       end
       puts "nil"
     end
-  end
+end
   
   linked_list = LinkedList.new
   linked_list.append(1)
   linked_list.append(2)
   linked_list.append(3)
+  linked_list.prepend(0)
   
   linked_list.display
