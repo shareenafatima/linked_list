@@ -32,6 +32,16 @@ class LinkedList
         @head = new_node
     end
   
+    def size
+        counter = 0
+        current = @head
+        while current
+            counter += 1
+            current = current.next_node
+        end
+        counter
+    end
+
     def display
       current = @head
       while current
@@ -43,9 +53,11 @@ class LinkedList
 end
   
   linked_list = LinkedList.new
-  linked_list.append(1)
   linked_list.append(2)
   linked_list.append(3)
+  linked_list.append(4)
+  linked_list.prepend(1)
   linked_list.prepend(0)
   
+  puts "size of the linked list: #{linked_list.size}"
   linked_list.display
