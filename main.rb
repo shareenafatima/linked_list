@@ -72,6 +72,15 @@ class LinkedList
         current.next_node = nil  
     end
 
+    def contains?(value)
+        current = @head
+        while current
+            return true if current.data == value
+            current = current.next_node
+        end
+        false
+    end
+
     def display
       current = @head
       while current
@@ -89,10 +98,11 @@ end
   linked_list.prepend(3)
   linked_list.prepend(2)
   linked_list.pop
-  
+  linked_list.display
   puts "size of the linked list: #{linked_list.size}"
   puts "Head of the linked list: #{linked_list.head.data}"
   puts "Tail of the linked_list: #{linked_list.tail.data}"
   puts "Node of the linked_list: #{linked_list.at(3).data}"
+  puts "contains 1? #{linked_list.contains?(1)}"
   
-  linked_list.display
+  
