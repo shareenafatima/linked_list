@@ -92,6 +92,16 @@ class LinkedList
         nil
    end
 
+   def to_s
+          output = []
+          current = @head
+       while current
+           output << current.data.to_s
+           current = current.next_node
+       end
+       output.join(' -> ')
+   end
+
     def display
       current = @head
       while current
@@ -115,5 +125,5 @@ end
   puts "Node of the linked_list: #{linked_list.at(3).data}"
   puts "contains 1? #{linked_list.contains?(1)}"
   puts "Index of value 3: #{linked_list.find(3)}"
-  
+  puts "linked_list: #{linked_list}"
   
