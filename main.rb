@@ -64,6 +64,14 @@ class LinkedList
         current_index == index ? current :nil
     end
 
+    def pop
+        current = @head 
+        while current.next_node.next_node
+            current = current.next_node
+        end
+        current.next_node = nil  
+    end
+
     def display
       current = @head
       while current
@@ -80,9 +88,11 @@ end
   linked_list.append(6)
   linked_list.prepend(3)
   linked_list.prepend(2)
+  linked_list.pop
   
   puts "size of the linked list: #{linked_list.size}"
   puts "Head of the linked list: #{linked_list.head.data}"
   puts "Tail of the linked_list: #{linked_list.tail.data}"
   puts "Node of the linked_list: #{linked_list.at(3).data}"
+  
   linked_list.display
