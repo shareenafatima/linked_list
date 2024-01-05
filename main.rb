@@ -42,6 +42,10 @@ class LinkedList
         counter
     end
 
+    def head
+        @head
+    end
+
     def display
       current = @head
       while current
@@ -60,4 +64,5 @@ end
   linked_list.prepend(0)
   
   puts "size of the linked list: #{linked_list.size}"
+  puts "Head of the linked list: #{linked_list.head.data}"
   linked_list.display
